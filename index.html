@@ -61,23 +61,8 @@
       top: 40px;
       z-index: 100;
     }
-    .nav-left { display: flex; flex-direction: column; gap: 1px; }
-    .nav-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--ink);
-      line-height: 1;
-    }
-    .nav-location {
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 500;
-    }
+    .nav-left { display: flex; align-items: center; }
+    .nav-logo { height: 52px; width: auto; display: block; }
     .nav-call {
       display: flex;
       align-items: center;
@@ -476,14 +461,8 @@
       flex-wrap: wrap;
       gap: 20px;
     }
-    .footer-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: rgba(247,244,239,0.5);
-    }
+    .footer-brand { display: flex; align-items: center; }
+    .footer-logo { height: 56px; width: auto; display: block; filter: brightness(0) invert(0.7); }
     .footer-mid {
       font-size: 14px;
       font-weight: 300;
@@ -559,8 +538,7 @@
   <!-- NAV — no distracting links, just the phone number -->
   <nav>
     <div class="nav-left">
-      <div class="nav-brand">Westland Exterior Cleaning</div>
-      <div class="nav-location">Amarillo, Texas</div>
+      <img src="logo_.png" alt="Westland Exterior Cleaning" class="nav-logo">
     </div>
     <div class="nav-call">
       <div class="nav-phone-label">Free Estimate</div>
@@ -682,7 +660,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-brand">Westland Exterior Cleaning</div>
+    <div class="footer-brand">
+      <img src="logo_.png" alt="Westland Exterior Cleaning" class="footer-logo">
+    </div>
     <div class="footer-mid">
       <a href="tel:8064148220">(806) 414-8220</a> &nbsp;·&nbsp; Amarillo, Texas
     </div>
