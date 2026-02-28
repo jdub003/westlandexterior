@@ -2,628 +2,698 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Westland Exterior Cleaning | Amarillo TX</title>
+  <title>Free Estimate — Westland Exterior Cleaning | Amarillo, TX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Professional exterior cleaning in Amarillo, TX. Free estimates, fast scheduling. Call (806) 414-8220.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --gold: #C9923A;
-      --gold-light: #E8B466;
-      --dark: #0D0D0D;
-      --dark-2: #141414;
-      --dark-3: #1E1E1E;
-      --mid: #2A2A2A;
-      --text: #F5F0EA;
-      --muted: #888;
-      --green: #22C55E;
+      --cream: #F7F4EF;
+      --warm-white: #FDFCFA;
+      --ink: #1A1814;
+      --ink-soft: #3D3A35;
+      --ink-muted: #8A8680;
+      --gold: #B8822A;
+      --gold-light: #D4A654;
+      --rule: #E2DDD6;
+      --urgent: #C0392B;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--dark);
-      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      background: var(--warm-white);
+      color: var(--ink);
       overflow-x: hidden;
     }
 
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 20px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent);
-      backdrop-filter: blur(2px);
+    /* ── URGENCY BAR ── */
+    .urgency-bar {
+      background: var(--ink);
+      padding: 10px 24px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(247,244,239,0.9);
+      letter-spacing: 0.3px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
     }
-    .nav-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 3px;
-      color: var(--gold);
-    }
-    .nav-phone {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      color: var(--text);
-      text-decoration: none;
-      border: 1px solid rgba(201,146,58,0.4);
-      padding: 10px 20px;
-      border-radius: 3px;
-      transition: all 0.2s;
-    }
-    .nav-phone:hover {
-      background: var(--gold);
-      color: #000;
-      border-color: var(--gold);
+    .urgency-bar span {
+      color: var(--gold-light);
+      font-weight: 700;
     }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
+    /* ── NAV ── */
+    nav {
+      background: rgba(253,252,250,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 48px;
+      height: 68px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      padding: 120px 48px 80px;
-      text-align: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 40px;
+      z-index: 100;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,146,58,0.08) 0%, transparent 70%),
-        linear-gradient(135deg, #0D0D0D 0%, #141414 100%);
-    }
-    .hero-grid-line {
-      position: absolute;
-      inset: 0;
-      background-image: 
-        linear-gradient(rgba(201,146,58,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,146,58,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-    }
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
+    .nav-left { display: flex; flex-direction: column; gap: 1px; }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
       font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .nav-location {
+      font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 28px;
-      padding: 8px 16px;
-      border: 1px solid rgba(201,146,58,0.3);
-      border-radius: 2px;
-      animation: fadeUp 0.6s ease both;
+      font-weight: 500;
     }
-    .hero-tag::before {
+    .nav-call {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-phone-label {
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .nav-phone-num {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .nav-phone-num:hover { color: var(--gold); }
+    .nav-cta {
+      display: none;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 108px);
+    }
+    .hero-left {
+      background: var(--cream);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--rule);
+    }
+    .offer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ink);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      margin-bottom: 36px;
+      width: fit-content;
+      animation: fadeIn 0.6s ease both;
+    }
+    .offer-badge::before {
       content: '';
       width: 6px; height: 6px;
-      background: var(--gold);
+      background: var(--gold-light);
       border-radius: 50%;
+      flex-shrink: 0;
     }
     .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(56px, 8vw, 100px);
-      line-height: 0.95;
-      letter-spacing: 2px;
-      margin-bottom: 28px;
-      animation: fadeUp 0.6s 0.1s ease both;
-    }
-    .hero h1 span {
-      color: var(--gold);
-      display: block;
-    }
-    .hero-sub {
-      font-size: 17px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 5vw, 78px);
       font-weight: 300;
-      line-height: 1.7;
-      color: rgba(245,240,234,0.7);
+      line-height: 1.05;
+      letter-spacing: -1px;
+      color: var(--ink);
+      margin-bottom: 24px;
+      animation: fadeIn 0.6s 0.1s ease both;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-desc {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      max-width: 420px;
       margin-bottom: 44px;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-      animation: fadeUp 0.6s 0.2s ease both;
+      animation: fadeIn 0.6s 0.15s ease both;
     }
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-      animation: fadeUp 0.6s 0.3s ease both;
+
+    /* PRIMARY CTA BLOCK */
+    .cta-block {
+      animation: fadeIn 0.6s 0.2s ease both;
     }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 18px 36px;
+    .cta-block-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .btn-call-primary {
+      display: block;
+      padding: 22px 40px;
       background: var(--gold);
-      color: #000;
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: 0.5px;
+      color: var(--ink);
       text-decoration: none;
-      border-radius: 3px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
       transition: all 0.2s;
+      max-width: 360px;
+      margin-bottom: 12px;
     }
-    .btn-primary:hover {
+    .btn-call-primary:hover {
       background: var(--gold-light);
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(201,146,58,0.35);
+      box-shadow: 0 8px 32px rgba(184,130,42,0.3);
     }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 18px 36px;
+    .btn-text-secondary {
+      display: block;
+      padding: 18px 40px;
       background: transparent;
-      color: var(--green);
-      font-weight: 600;
-      font-size: 15px;
+      color: var(--ink);
       text-decoration: none;
-      border: 1.5px solid var(--green);
-      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: center;
+      border: 1px solid var(--rule);
+      max-width: 360px;
       transition: all 0.2s;
     }
-    .btn-secondary:hover {
-      background: var(--green);
-      color: #000;
-      transform: translateY(-2px);
-    }
-    .hero-badges {
-      margin-top: 60px;
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-      justify-content: center;
-      animation: fadeUp 0.6s 0.4s ease both;
-    }
-    .badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: rgba(245,240,234,0.5);
-    }
-    .badge-icon {
-      width: 32px; height: 32px;
-      border: 1px solid rgba(201,146,58,0.3);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
+    .btn-text-secondary:hover { border-color: var(--ink); }
+    .cta-reassurance {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--ink-muted);
+      font-weight: 300;
+      max-width: 360px;
+      text-align: center;
     }
 
-    /* DIVIDER */
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(201,146,58,0.3), transparent);
+    /* HERO RIGHT */
+    .hero-right {
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right-texture {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.025) 39px, rgba(255,255,255,0.025) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.025) 39px, rgba(255,255,255,0.025) 40px);
+    }
+    .hero-right-content { position: relative; z-index: 2; }
+    .hero-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      color: rgba(247,244,239,0.55);
+      margin-bottom: 48px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-trust {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+    }
+    .trust-item {
+      background: #1A1814;
+      padding: 28px 24px;
+    }
+    .trust-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .trust-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: rgba(247,244,239,0.85);
+      font-weight: 400;
     }
 
-    /* SERVICES */
-    .services {
-      padding: 100px 48px;
-      background: var(--dark-2);
+    /* ── WHAT HAPPENS NEXT ── */
+    .process {
+      padding: 80px 60px;
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--rule);
     }
-    .section-label {
-      font-size: 11px;
+    .process-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-eyebrow {
+      font-size: 10px;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(38px, 5vw, 60px);
-      letter-spacing: 2px;
-      margin-bottom: 60px;
-      line-height: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
     }
-    .services-grid {
+    .section-title em { font-style: italic; color: var(--gold); }
+    .process-steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .service-card {
-      background: var(--dark-3);
-      padding: 40px 36px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s;
-      cursor: default;
+    .process-step {
+      background: var(--warm-white);
+      padding: 44px 36px;
+      text-align: center;
     }
-    .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: var(--gold);
-      transition: width 0.4s ease;
-    }
-    .service-card:hover::after { width: 100%; }
-    .service-card:hover { background: #222; }
-    .service-num {
-      font-family: 'Bebas Neue', sans-serif;
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 48px;
-      color: rgba(201,146,58,0.15);
+      font-weight: 300;
+      color: rgba(184,130,42,0.2);
       line-height: 1;
       margin-bottom: 16px;
     }
-    .service-name {
-      font-size: 18px;
+    .step-title {
+      font-size: 15px;
       font-weight: 600;
       margin-bottom: 10px;
       letter-spacing: 0.3px;
     }
-    .service-desc {
+    .step-body {
       font-size: 13px;
-      color: var(--muted);
-      line-height: 1.7;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--ink-muted);
     }
 
-    /* WHY US */
-    .why {
-      padding: 100px 48px;
-      background: var(--dark);
+    /* ── SERVICES ── */
+    .services {
+      padding: 80px 60px;
+      background: var(--cream);
     }
-    .why-inner {
+    .services-header {
+      margin-bottom: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .services-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--rule);
     }
-    .why-list {
-      list-style: none;
-      margin-top: 40px;
-    }
-    .why-list li {
-      display: flex;
-      gap: 20px;
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .why-list li:last-child { border-bottom: none; }
-    .why-icon {
-      width: 40px; height: 40px;
-      flex-shrink: 0;
-      background: rgba(201,146,58,0.1);
-      border: 1px solid rgba(201,146,58,0.25);
-      border-radius: 4px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-    }
-    .why-text strong {
-      display: block;
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .why-text p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .why-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-    }
-    .stat-box {
-      background: var(--dark-3);
+    .service-item {
+      background: var(--cream);
       padding: 40px 32px;
-      text-align: center;
+      transition: background 0.3s;
     }
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 48px;
-      color: var(--gold);
-      line-height: 1;
-      display: block;
-    }
-    .stat-label {
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    /* GALLERY */
-    .gallery-section {
-      padding: 100px 48px;
-      background: var(--dark-2);
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3px;
-      margin-top: 48px;
-    }
-    .gallery-item {
-      position: relative;
-      background: var(--mid);
-      aspect-ratio: 16/10;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s;
-    }
-    .gallery-item:hover img { transform: scale(1.04); }
-    .gallery-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: var(--muted);
+    .service-item:hover { background: #F0ECE4; }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 24px;
     }
-    .gallery-placeholder-icon {
-      font-size: 32px;
-      opacity: 0.3;
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 12px;
     }
+    .service-body {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--ink-muted);
+    }
+    .service-line {
+      width: 28px; height: 1px;
+      background: var(--gold);
+      margin-top: 28px;
+      transition: width 0.3s;
+    }
+    .service-item:hover .service-line { width: 56px; }
 
-    /* CTA BAND */
-    .cta-band {
-      padding: 100px 48px;
-      background: linear-gradient(135deg, #1a1007 0%, #0D0D0D 50%, #111 100%);
+    /* ── BOTTOM CTA ── */
+    .bottom-cta {
+      background: var(--ink);
+      padding: 100px 60px;
+      text-align: center;
       position: relative;
       overflow: hidden;
-      text-align: center;
     }
-    .cta-band::before {
-      content: '';
+    .bottom-cta::before {
+      content: 'WESTLAND';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 50% 100% at 50% 50%, rgba(201,146,58,0.07) 0%, transparent 70%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 240px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.018);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      letter-spacing: 16px;
+      pointer-events: none;
     }
-    .cta-band-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(42px, 6vw, 80px);
-      letter-spacing: 3px;
-      margin-bottom: 16px;
+    .bottom-cta-eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 20px;
       position: relative;
     }
-    .cta-band-sub {
-      font-size: 16px;
-      color: rgba(245,240,234,0.6);
+    .bottom-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .bottom-cta h2 em { font-style: italic; color: var(--gold-light); }
+    .bottom-cta-sub {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(247,244,239,0.4);
       margin-bottom: 48px;
       position: relative;
     }
-    .cta-band-actions {
+    .bottom-cta-btns {
       display: flex;
-      gap: 20px;
+      gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
       position: relative;
     }
+    .cta-btn-gold {
+      padding: 22px 56px;
+      background: var(--gold);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: all 0.2s;
+    }
+    .cta-btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .cta-btn-outline {
+      padding: 22px 56px;
+      background: transparent;
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid rgba(247,244,239,0.2);
+      transition: all 0.2s;
+    }
+    .cta-btn-outline:hover { border-color: rgba(247,244,239,0.55); transform: translateY(-2px); }
+    .cta-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(247,244,239,0.25);
+      position: relative;
+    }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer {
-      background: #000;
-      padding: 48px;
+      background: #111009;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 36px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 24px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      gap: 20px;
     }
     .footer-brand {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
       letter-spacing: 3px;
-      color: var(--gold);
+      text-transform: uppercase;
+      color: rgba(247,244,239,0.5);
     }
-    .footer-info {
+    .footer-mid {
       font-size: 13px;
-      color: var(--muted);
-      line-height: 1.8;
+      font-weight: 300;
+      color: rgba(255,255,255,0.25);
       text-align: center;
     }
-    .footer-copy {
-      font-size: 12px;
-      color: rgba(255,255,255,0.2);
-    }
+    .footer-mid a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.14); letter-spacing: 1px; }
 
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
+    /* ── MOBILE STICKY CALL BAR ── */
+    .mobile-sticky {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 300;
+      padding: 12px 16px;
+      background: var(--warm-white);
+      border-top: 1px solid var(--rule);
+      gap: 10px;
+    }
+    .mobile-sticky a {
+      flex: 1;
+      padding: 16px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .mobile-call { background: var(--gold); color: var(--ink); }
+    .mobile-text { background: var(--ink); color: var(--cream); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav { padding: 16px 24px; }
-      .hero { padding: 100px 24px 60px; }
-      .services, .why, .gallery-section, .cta-band { padding: 70px 24px; }
-      .why-inner { grid-template-columns: 1fr; gap: 40px; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .why-stats { grid-template-columns: 1fr 1fr; }
-      footer { padding: 36px 24px; flex-direction: column; text-align: center; }
-      .footer-info { text-align: center; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .urgency-bar { font-size: 12px; padding: 9px 16px; }
+      nav { padding: 0 20px; top: 38px; }
+      .nav-phone-label { display: none; }
+      .nav-phone-num { font-size: 16px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 52px 24px 48px; }
+      .hero-right { min-height: 340px; padding: 40px 24px; }
+      .btn-call-primary, .btn-text-secondary { max-width: 100%; }
+      .cta-reassurance { max-width: 100%; }
+      .process { padding: 64px 24px; }
+      .process-steps { grid-template-columns: 1fr; }
+      .services { padding: 64px 24px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .bottom-cta { padding: 80px 24px; }
+      footer { padding: 32px 20px; flex-direction: column; text-align: center; }
+      .mobile-sticky { display: flex; }
+      body { padding-bottom: 80px; }
+    }
+    @media (max-width: 560px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-trust { grid-template-columns: 1fr 1fr; }
+      nav { height: 58px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    Serving Amarillo now — <span>Free estimates available this week.</span> Call or text for fast scheduling.
+  </div>
+
+  <!-- NAV — no distracting links, just the phone number -->
   <nav>
-    <div class="nav-logo">WESTLAND</div>
-    <a href="tel:8064148220" class="nav-phone">Call (806) 414-8220</a>
+    <div class="nav-left">
+      <div class="nav-brand">Westland</div>
+      <div class="nav-location">Amarillo, Texas</div>
+    </div>
+    <div class="nav-call">
+      <div class="nav-phone-label">Free Estimate</div>
+      <a href="tel:8064148220" class="nav-phone-num">(806) 414-8220</a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-grid-line"></div>
-    <div class="hero-content">
-      <div class="hero-tag">Amarillo, Texas</div>
-      <h1>
-        Bring Your Home
-        <span>Back to Life.</span>
-      </h1>
-      <p class="hero-sub">
-        Professional exterior cleaning that restores your home's curb appeal. 
-        Fast scheduling, free estimates, and results that speak for themselves.
+    <div class="hero-left">
+      <div class="offer-badge">Free Estimate — No Obligation</div>
+      <h1>Your home,<br><em>restored.</em></h1>
+      <p class="hero-desc">
+        Professional exterior cleaning for Amarillo homeowners. We remove years of grime, dirt, and algae — fast turnaround, transparent pricing, and results that last.
       </p>
-      <div class="hero-ctas">
-        <a href="tel:8064148220" class="btn-primary">
-          Call (806) 414-8220
-        </a>
-        <a href="sms:8064148220" class="btn-secondary">
-          Text for Estimate
-        </a>
+      <div class="cta-block">
+        <div class="cta-block-label">Call or text now for your free estimate</div>
+        <a href="tel:8064148220" class="btn-call-primary">Call (806) 414-8220</a>
+        <a href="sms:8064148220" class="btn-text-secondary">Text for Fast Response</a>
+        <p class="cta-reassurance">No cost. No commitment. We'll get back to you fast.</p>
       </div>
-      <div class="hero-badges">
-        <div class="badge">
-          <div class="badge-icon">✓</div>
-          Free Estimates
-        </div>
-        <div class="badge">
-          <div class="badge-icon">→</div>
-          Fast Scheduling
-        </div>
-        <div class="badge">
-          <div class="badge-icon">★</div>
-          Local & Reliable
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-texture"></div>
+      <div class="hero-right-content">
+        <p class="hero-quote">"First impressions start at the curb."</p>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <div class="trust-label">Estimates</div>
+            <div class="trust-value">Always Free</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-label">Scheduling</div>
+            <div class="trust-value">Fast & Flexible</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-label">Based In</div>
+            <div class="trust-value">Amarillo, TX</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-label">Service Area</div>
+            <div class="trust-value">& Surrounding</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <!-- WHAT HAPPENS NEXT — reduces friction, tells people exactly what to expect -->
+  <section class="process">
+    <div class="process-header">
+      <div class="section-eyebrow">Simple Process</div>
+      <div class="section-title">What happens when<br>you <em>reach out</em></div>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-title">You Call or Text</div>
+        <div class="step-body">Reach out at (806) 414-8220. Takes less than 2 minutes. No forms, no waiting rooms.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-title">We Give You a Free Estimate</div>
+        <div class="step-body">We'll assess your property and give you a clear, upfront price. No surprises, no pressure.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-title">We Get to Work</div>
+        <div class="step-body">Fast scheduling, professional results. Your home looks like new — and you didn't have to lift a finger.</div>
+      </div>
+    </div>
+  </section>
 
   <!-- SERVICES -->
   <section class="services">
-    <div class="section-label">What We Do</div>
-    <div class="section-title">Our Services</div>
+    <div class="services-header">
+      <div class="section-eyebrow">What We Do</div>
+      <div class="section-title">Our <em>Services</em></div>
+    </div>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-item">
         <div class="service-num">01</div>
-        <div class="service-name">House Washing</div>
-        <div class="service-desc">Soft wash and pressure wash solutions that safely remove dirt, algae, and grime from any exterior surface.</div>
+        <div class="service-title">House Washing</div>
+        <div class="service-body">Soft wash and pressure wash solutions that safely lift dirt, algae, and grime from any exterior surface.</div>
+        <div class="service-line"></div>
       </div>
-      <div class="service-card">
+      <div class="service-item">
         <div class="service-num">02</div>
-        <div class="service-name">Driveway & Concrete Cleaning</div>
-        <div class="service-desc">High-pressure cleaning that blasts away years of oil stains, tire marks, and embedded grime from your concrete.</div>
+        <div class="service-title">Driveway & Concrete</div>
+        <div class="service-body">High-pressure cleaning that removes oil stains, tire marks, and years of embedded grime.</div>
+        <div class="service-line"></div>
       </div>
-      <div class="service-card">
+      <div class="service-item">
         <div class="service-num">03</div>
-        <div class="service-name">Fence & Patio Cleaning</div>
-        <div class="service-desc">Restore your outdoor spaces. We clean wood, vinyl, and composite fences and patios to like-new condition.</div>
+        <div class="service-title">Fence & Patio</div>
+        <div class="service-body">Restore your outdoor living spaces — wood, vinyl, and composite cleaned to like-new condition.</div>
+        <div class="service-line"></div>
       </div>
-      <div class="service-card">
+      <div class="service-item">
         <div class="service-num">04</div>
-        <div class="service-name">Commercial Exterior Cleaning</div>
-        <div class="service-desc">Maintain a professional appearance for your business. Storefronts, parking lots, and building exteriors.</div>
+        <div class="service-title">Commercial Cleaning</div>
+        <div class="service-body">Storefronts, parking areas, and building exteriors for businesses of all sizes.</div>
+        <div class="service-line"></div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- WHY US -->
-  <section class="why">
-    <div class="why-inner">
-      <div>
-        <div class="section-label">Why Westland</div>
-        <div class="section-title">The Amarillo Standard</div>
-        <ul class="why-list">
-          <li>
-            <div class="why-icon">◎</div>
-            <div class="why-text">
-              <strong>Local Expertise</strong>
-              <p>We know Amarillo's dust, wind, and weather — and exactly what it takes to keep your home clean year-round.</p>
-            </div>
-          </li>
-          <li>
-            <div class="why-icon">$</div>
-            <div class="why-text">
-              <strong>Always Free Estimates</strong>
-              <p>No pressure, no obligation. Get a clear price upfront before any work begins.</p>
-            </div>
-          </li>
-          <li>
-            <div class="why-icon">→</div>
-            <div class="why-text">
-              <strong>Fast, Reliable Service</strong>
-              <p>We show up when we say we will and get the job done right the first time.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="why-stats">
-        <div class="stat-box">
-          <span class="stat-num">FREE</span>
-          <div class="stat-label">Estimates</div>
-        </div>
-        <div class="stat-box">
-          <span class="stat-num">FAST</span>
-          <div class="stat-label">Scheduling</div>
-        </div>
-        <div class="stat-box">
-          <span class="stat-num">4+</span>
-          <div class="stat-label">Services</div>
-        </div>
-        <div class="stat-box">
-          <span class="stat-num">LOCAL</span>
-          <div class="stat-label">Amarillo Based</div>
-        </div>
-      </div>
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta">
+    <div class="bottom-cta-eyebrow">Ready to Get Started?</div>
+    <h2>Get your <em>free estimate</em><br>today.</h2>
+    <p class="bottom-cta-sub">Amarillo & surrounding areas · Fast scheduling · No obligation</p>
+    <div class="bottom-cta-btns">
+      <a href="tel:8064148220" class="cta-btn-gold">Call (806) 414-8220</a>
+      <a href="sms:8064148220" class="cta-btn-outline">Text for Fast Response</a>
     </div>
-  </section>
-
-
-
-  <!-- CTA BAND -->
-  <section class="cta-band">
-    <div class="cta-band-title">Ready for a Clean Home?</div>
-    <p class="cta-band-sub">Serving Amarillo and all surrounding areas — Free estimates, fast response.</p>
-    <div class="cta-band-actions">
-      <a href="tel:8064148220" class="btn-primary" style="font-size:16px; padding: 20px 44px;">
-        Call (806) 414-8220
-      </a>
-      <a href="sms:8064148220" class="btn-secondary" style="font-size:16px; padding: 20px 44px;">
-        Text Us Now
-      </a>
-    </div>
+    <p class="cta-note">We respond same day.</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-brand">WESTLAND EXTERIOR CLEANING</div>
-    <div class="footer-info">
-      (806) 414-8220 &nbsp;·&nbsp; Amarillo, Texas
+    <div class="footer-brand">Westland Exterior Cleaning</div>
+    <div class="footer-mid">
+      <a href="tel:8064148220">(806) 414-8220</a> &nbsp;·&nbsp; Amarillo, Texas
     </div>
     <div class="footer-copy">© 2026 All Rights Reserved</div>
   </footer>
+
+  <!-- MOBILE STICKY CALL BAR — most ad clicks are on phones -->
+  <div class="mobile-sticky">
+    <a href="tel:8064148220" class="mobile-call">Call Now</a>
+    <a href="sms:8064148220" class="mobile-text">Text for Estimate</a>
+  </div>
 
 </body>
 </html>
