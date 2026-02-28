@@ -23,7 +23,6 @@
     }
 
     h2 {
-      font-weight: normal;
       color: #c48a3a;
     }
 
@@ -44,8 +43,6 @@
     }
 
     .services {
-      display: grid;
-      gap: 15px;
       max-width: 600px;
       margin: auto;
     }
@@ -53,6 +50,20 @@
     .service-box {
       background-color: #1c1c1c;
       padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
       border-radius: 8px;
     }
 
@@ -61,6 +72,12 @@
       background-color: black;
       font-size: 14px;
       color: gray;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -80,6 +97,16 @@
     <div class="service-box">Driveway & Concrete Cleaning</div>
     <div class="service-box">Fence & Patio Cleaning</div>
     <div class="service-box">Commercial Exterior Cleaning</div>
+  </div>
+</section>
+
+<section>
+  <h2>Before & After Results</h2>
+  <div class="gallery">
+    <img src="before1.jpg" alt="Before Cleaning">
+    <img src="after1.jpg" alt="After Cleaning">
+    <img src="before2.jpg" alt="Before Cleaning">
+    <img src="after2.jpg" alt="After Cleaning">
   </div>
 </section>
 
