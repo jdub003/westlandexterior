@@ -42,29 +42,18 @@
       padding: 60px 20px;
     }
 
-    .services {
-      max-width: 600px;
-      margin: auto;
-    }
-
     .service-box {
       background-color: #1c1c1c;
       padding: 20px;
-      margin: 15px 0;
+      margin: 15px auto;
       border-radius: 8px;
+      max-width: 600px;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .gallery img {
+    .full-width-gallery img {
       width: 100%;
-      border-radius: 8px;
+      display: block;
+      margin-bottom: 40px;
     }
 
     footer {
@@ -72,12 +61,6 @@
       background-color: black;
       font-size: 14px;
       color: gray;
-    }
-
-    @media (max-width: 768px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -92,21 +75,17 @@
 
 <section>
   <h2>Our Services</h2>
-  <div class="services">
-    <div class="service-box">House Washing</div>
-    <div class="service-box">Driveway & Concrete Cleaning</div>
-    <div class="service-box">Fence & Patio Cleaning</div>
-    <div class="service-box">Commercial Exterior Cleaning</div>
-  </div>
+  <div class="service-box">House Washing</div>
+  <div class="service-box">Driveway & Concrete Cleaning</div>
+  <div class="service-box">Fence & Patio Cleaning</div>
+  <div class="service-box">Commercial Exterior Cleaning</div>
 </section>
 
 <section>
   <h2>Before & After Results</h2>
-  <div class="gallery">
-    <img src="before1.jpg" alt="Before Cleaning">
-    <img src="after1.jpg" alt="After Cleaning">
-    <img src="before2.jpg" alt="Before Cleaning">
-    <img src="after2.jpg" alt="After Cleaning">
+  <div class="full-width-gallery">
+    <img src="before%20and%20after%20amarillo.jpg" alt="Before and After Amarillo Home">
+    <img src="before%20and%20after%203.jpg" alt="Before and After Amarillo Home">
   </div>
 </section>
 
