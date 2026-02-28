@@ -24,22 +24,27 @@
 
     h2 {
       color: #c48a3a;
+      margin-top: 50px;
     }
 
-    .button {
+    .cta-button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
+      margin: 15px;
+      padding: 16px 32px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .call-btn {
       background-color: #c48a3a;
       color: black;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      font-size: 18px;
     }
 
-    section {
-      padding: 60px 20px;
+    .text-btn {
+      background-color: #25D366;
+      color: white;
     }
 
     .service-box {
@@ -50,10 +55,15 @@
       max-width: 600px;
     }
 
-    .full-width-gallery img {
+    .gallery img {
       width: 100%;
       display: block;
       margin-bottom: 40px;
+    }
+
+    .cta-section {
+      background-color: #1a1a1a;
+      padding: 60px 20px;
     }
 
     footer {
@@ -68,13 +78,22 @@
 <body>
 
 <header>
-  <h1>Westland Exterior Cleaning</h1>
-  <h2>Professional Exterior Cleaning in Amarillo, TX</h2>
-  <a href="tel:8064148220" class="button">Call Now (806) 414-8220</a>
+  <h1>Bring Your Home Back to Life</h1>
+  <p>Professional Exterior Cleaning in Amarillo, TX</p>
+  <p><strong>FREE Estimates • Fast Scheduling • Local & Reliable</strong></p>
+
+  <a href="tel:8064148220" class="cta-button call-btn">
+    📞 Call Now (806) 414-8220
+  </a>
+
+  <a href="sms:8064148220" class="cta-button text-btn">
+    💬 Text for Free Estimate
+  </a>
 </header>
 
 <section>
   <h2>Our Services</h2>
+
   <div class="service-box">House Washing</div>
   <div class="service-box">Driveway & Concrete Cleaning</div>
   <div class="service-box">Fence & Patio Cleaning</div>
@@ -82,25 +101,43 @@
 </section>
 
 <section>
-  <h2>Before & After Results</h2>
-  <div class="full-width-gallery">
+  <h2>Real Amarillo Results</h2>
+
+  <div class="gallery">
     <img src="amarillo1.jpg" alt="Before and After Amarillo Home">
     <img src="amarillo2.jpg" alt="Before and After Amarillo Home">
   </div>
+
+  <a href="tel:8064148220" class="cta-button call-btn">
+    📞 Call (806) 414-8220
+  </a>
+
+  <a href="sms:8064148220" class="cta-button text-btn">
+    💬 Text Us Now
+  </a>
 </section>
 
-<section>
-  <h2>Why Choose Us?</h2>
-  <p>✔ Local Amarillo Business</p>
-  <p>✔ Reliable & Professional</p>
-  <p>✔ Safe Soft Wash Methods</p>
-  <p>✔ 5-Star Rated Service</p>
+<section class="cta-section">
+  <h2>Get Your FREE Estimate Today</h2>
+  <p>Serving Amarillo and surrounding areas</p>
+
+  <a href="tel:8064148220" class="cta-button call-btn">
+    📞 Call Now (806) 414-8220
+  </a>
+
+  <a href="sms:8064148220" class="cta-button text-btn">
+    💬 Text for Fast Response
+  </a>
 </section>
 
 <footer>
-  © 2026 Westland Exterior Cleaning  
+  Westland Exterior Cleaning  
   <br>
-  Serving Amarillo and surrounding areas
+  📞 (806) 414-8220  
+  <br>
+  Amarillo, Texas  
+  <br><br>
+  © 2026 All Rights Reserved
 </footer>
 
 </body>
