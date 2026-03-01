@@ -253,6 +253,71 @@
       letter-spacing: 0.3px;
     }
 
+    /* ── JOE INTRO ── */
+    .joe-section {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      background: var(--cream);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .joe-photo-wrap {
+      overflow: hidden;
+      max-height: 600px;
+    }
+    .joe-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .joe-content {
+      padding: 72px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .joe-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin: 12px 0 24px;
+    }
+    .joe-heading em { font-style: italic; color: var(--gold); }
+    .joe-body {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ink-soft);
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+    .joe-stats {
+      display: flex;
+      gap: 2px;
+      background: var(--rule);
+      margin-bottom: 4px;
+    }
+    .joe-stat {
+      flex: 1;
+      background: var(--warm-white);
+      padding: 20px 24px;
+    }
+    .joe-stat-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .joe-stat-label {
+      font-size: 12px;
+      color: var(--ink-muted);
+      font-weight: 300;
+    }
+
     /* ── WHY BAR ── */
     .why-bar {
       background: var(--ink);
@@ -697,6 +762,10 @@
       .hero-right { min-height: auto; padding: 36px 24px; }
       .hero-proof-item img { max-height: 180px; }
       .btn-call-hero, .btn-text-secondary { max-width: 100%; }
+      .joe-section { grid-template-columns: 1fr; }
+      .joe-photo-wrap { max-height: 360px; }
+      .joe-content { padding: 48px 24px; }
+      .joe-stats { flex-direction: column; gap: 1px; }
       .why-bar { padding: 32px 24px; }
       .why-bar-items { gap: 10px 24px; }
       .why-bar-item { white-space: normal; font-size: 13px; }
@@ -724,7 +793,7 @@
 
   <!-- URGENCY BAR -->
   <div class="urgency-bar">
-    Amarillo dust and grime build up fast — <span>don't let it damage your exterior.</span> Free same-day estimates available.
+    Untreated grime causes permanent staining — <span>most surfaces need cleaning every 12–18 months.</span> We only take limited jobs per week to ensure quality.
   </div>
 
   <!-- NAV — no distracting links, just the phone number -->
@@ -747,10 +816,10 @@
       <a href="tel:8064148220" class="btn-call-hero">📞 CALL NOW – (806) 414-8220</a>
       <a href="sms:8064148220" class="btn-text-secondary">💬 Text for Same-Day Free Quote — No Waiting, No Forms</a>
       <ul class="trust-bullets">
-        <li><span class="tb-check">✔</span> Trusted by Amarillo Homeowners — Satisfaction Guaranteed</li>
-        <li><span class="tb-check">✔</span> Safe Soft Wash — No Damage to Your Home</li>
-        <li><span class="tb-check">✔</span> Same-Week Scheduling Available</li>
-        <li><span class="tb-check">✔</span> Owner Operated — Local, Not a Franchise</li>
+        <li><span class="tb-check">✔</span> We show up on time, every time — your neighbors already know</li>
+        <li><span class="tb-check">✔</span> Safe soft wash — we pre-treat with biodegradable solution before every wash</li>
+        <li><span class="tb-check">✔</span> Most estimates are same-day — takes 2 minutes to get yours</li>
+        <li><span class="tb-check">✔</span> Owner operated — Joe handles every job personally</li>
       </ul>
     </div>
     <div class="hero-right">
@@ -781,6 +850,33 @@
     </div>
   </section>
 
+  <!-- JOE INTRO -->
+  <section class="joe-section">
+    <div class="joe-photo-wrap">
+      <img src="joe.png" alt="Joe — Owner of Westland Exterior Cleaning" class="joe-photo">
+    </div>
+    <div class="joe-content">
+      <div class="section-eyebrow">Owner & Operator</div>
+      <h2 class="joe-heading">Hi, I'm Joe.<br><em>I show up to every job personally.</em></h2>
+      <p class="joe-body">I started Westland Exterior Cleaning because I believe Amarillo homeowners deserve a contractor who actually cares about the result — not just the paycheck. When you call, you get me. When I show up, I bring the same equipment and attention to detail whether it's a small patio or a full driveway. Your neighbors are already noticing the difference. Let me show you what a clean exterior looks like.</p>
+      <div class="joe-stats">
+        <div class="joe-stat">
+          <div class="joe-stat-val">On Time</div>
+          <div class="joe-stat-label">Every single job</div>
+        </div>
+        <div class="joe-stat">
+          <div class="joe-stat-val">Owner Present</div>
+          <div class="joe-stat-label">Not a crew — it's Joe</div>
+        </div>
+        <div class="joe-stat">
+          <div class="joe-stat-val">Satisfaction</div>
+          <div class="joe-stat-label">Guaranteed or we fix it</div>
+        </div>
+      </div>
+      <a href="tel:8064148220" class="btn-call-hero" style="margin-top: 32px;">📞 Call Joe — (806) 414-8220</a>
+    </div>
+  </section>
+
   <!-- PROCESS -->
   <section class="process">
     <div class="process-header">
@@ -791,17 +887,17 @@
       <div class="process-step">
         <div class="step-num">1</div>
         <div class="step-title">Call or Text — Takes 2 Minutes</div>
-        <div class="step-body">Reach out at (806) 414-8220. No forms, no waiting rooms. Just a real person ready to help.</div>
+        <div class="step-body">No forms, no hold music. Joe picks up and gives you a real answer. Most estimates are same-day.</div>
       </div>
       <div class="process-step">
         <div class="step-num">2</div>
-        <div class="step-title">Get a Free Upfront Quote</div>
-        <div class="step-body">We give you a clear price before anything starts. No hidden fees, no pressure, no surprises.</div>
+        <div class="step-title">Get a Clear Upfront Price</div>
+        <div class="step-body">You'll know the exact cost before anything starts. No hidden fees, no pressure, no surprises — ever.</div>
       </div>
       <div class="process-step">
         <div class="step-num">3</div>
-        <div class="step-title">We Show Up & Get It Done</div>
-        <div class="step-body">Same-week scheduling. Professional equipment. Your home looks like new — guaranteed.</div>
+        <div class="step-title">Joe Shows Up On Time</div>
+        <div class="step-body">Imagine pulling into a clean driveway. That's what you get — and it happens faster than you'd expect.</div>
       </div>
     </div>
   </section>
@@ -821,9 +917,9 @@
       </div>
     </div>
     <div class="gallery-cta">
-      <p class="gallery-cta-text">Like what you see? Get your free estimate today.</p>
+      <p class="gallery-cta-text">Your driveway could look like this. <strong>We're currently scheduling this week in Amarillo.</strong></p>
       <a href="tel:8064148220" class="gallery-cta-btn">📞 Call (806) 414-8220</a>
-      <a href="sms:8064148220" class="gallery-cta-text-link">or text us for a fast response →</a>
+      <a href="sms:8064148220" class="gallery-cta-text-link">or text us — most estimates are same-day →</a>
     </div>
   </section>
 
