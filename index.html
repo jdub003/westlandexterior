@@ -125,23 +125,62 @@
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(48px, 5vw, 78px);
+      font-size: clamp(52px, 6vw, 88px);
       font-weight: 300;
       line-height: 1.05;
       letter-spacing: -1px;
       color: var(--ink);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       animation: fadeIn 0.6s 0.1s ease both;
     }
     .hero h1 em { font-style: italic; color: var(--gold); }
-    .hero-desc {
-      font-size: 17px;
-      font-weight: 300;
-      line-height: 1.8;
+    .hero-services-list {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--ink-muted);
+      margin-bottom: 36px;
+      text-transform: uppercase;
+    }
+    .btn-call-hero {
+      display: block;
+      padding: 22px 40px;
+      background: var(--gold);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-align: center;
+      transition: all 0.2s;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 24px rgba(184,130,42,0.35);
+    }
+    .btn-call-hero:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(184,130,42,0.45);
+    }
+    .trust-bullets {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .trust-bullets li {
+      font-size: 14px;
+      font-weight: 500;
       color: var(--ink-soft);
-      max-width: 420px;
-      margin-bottom: 44px;
-      animation: fadeIn 0.6s 0.15s ease both;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tb-check {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0;
     }
 
     /* PRIMARY CTA BLOCK */
@@ -250,6 +289,42 @@
       font-size: 20px;
       color: rgba(247,244,239,0.85);
       font-weight: 400;
+    }
+
+    /* ── WHY BAR ── */
+    .why-bar {
+      background: var(--ink);
+      padding: 40px 60px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .why-bar-title {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .why-bar-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 40px;
+    }
+    .why-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(247,244,239,0.88);
+      white-space: nowrap;
+    }
+    .why-bar-check {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 14px;
     }
 
     /* ── WHAT HAPPENS NEXT ── */
@@ -541,6 +616,9 @@
       .hero-right { min-height: 340px; padding: 40px 24px; }
       .btn-call-primary, .btn-text-secondary { max-width: 100%; }
       .cta-reassurance { max-width: 100%; }
+      .why-bar { padding: 32px 24px; }
+      .why-bar-items { gap: 10px 24px; }
+      .why-bar-item { white-space: normal; font-size: 13px; }
       .process { padding: 64px 24px; }
       .process-steps { grid-template-columns: 1fr; }
       .gallery { padding: 64px 24px; }
@@ -563,7 +641,7 @@
 
   <!-- URGENCY BAR -->
   <div class="urgency-bar">
-    Serving Amarillo now — <span>Free estimates available this week.</span> Call or text for fast scheduling.
+    Amarillo dust and grime build up fast — <span>don't let it damage your exterior.</span> Free same-day estimates available.
   </div>
 
   <!-- NAV — no distracting links, just the phone number -->
@@ -580,17 +658,17 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <div class="offer-badge">Free Estimate — No Obligation</div>
-      <h1>Your home,<br><em>restored.</em></h1>
-      <p class="hero-desc">
-        Professional exterior cleaning for Amarillo homeowners. We remove years of grime, dirt, and algae — fast turnaround, transparent pricing, and results that last.
-      </p>
-      <div class="cta-block">
-        <div class="cta-block-label">Call or text now for your free estimate</div>
-        <a href="tel:8064148220" class="btn-call-primary">Call (806) 414-8220</a>
-        <a href="sms:8064148220" class="btn-text-secondary">Text for Fast Response</a>
-        <p class="cta-reassurance">No cost. No commitment. We'll get back to you fast.</p>
-      </div>
+      <div class="offer-badge">Free Same-Day Estimates — Amarillo, TX</div>
+      <h1>Pressure Washing<br><em>Amarillo, TX</em></h1>
+      <p class="hero-services-list">Driveway &nbsp;·&nbsp; House Wash &nbsp;·&nbsp; Concrete &nbsp;·&nbsp; Soft Wash</p>
+      <a href="tel:8064148220" class="btn-call-hero">📞 CALL NOW &nbsp;(806) 414-8220</a>
+      <a href="sms:8064148220" class="btn-text-secondary">Text for Fast Response</a>
+      <ul class="trust-bullets">
+        <li><span class="tb-check">✔</span> Locally Owned in Amarillo</li>
+        <li><span class="tb-check">✔</span> Safe Soft Wash — No Damage to Your Home</li>
+        <li><span class="tb-check">✔</span> Same-Week Scheduling Available</li>
+        <li><span class="tb-check">✔</span> Satisfaction Guaranteed</li>
+      </ul>
     </div>
     <div class="hero-right">
       <div class="hero-right-texture"></div>
@@ -615,6 +693,18 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US BAR -->
+  <section class="why-bar">
+    <div class="why-bar-title">Why Amarillo Homeowners Choose Us</div>
+    <div class="why-bar-items">
+      <div class="why-bar-item"><span class="why-bar-check">✔</span> 100+ Homes Cleaned</div>
+      <div class="why-bar-item"><span class="why-bar-check">✔</span> Fully Insured</div>
+      <div class="why-bar-item"><span class="why-bar-check">✔</span> No Damage Soft Wash Method</div>
+      <div class="why-bar-item"><span class="why-bar-check">✔</span> Transparent Upfront Pricing</div>
+      <div class="why-bar-item"><span class="why-bar-check">✔</span> Owner Operated</div>
     </div>
   </section>
 
@@ -718,8 +808,8 @@
 
   <!-- MOBILE STICKY CALL BAR — most ad clicks are on phones -->
   <div class="mobile-sticky">
-    <a href="tel:8064148220" class="mobile-call">Call Now</a>
-    <a href="sms:8064148220" class="mobile-text">Text for Estimate</a>
+    <a href="tel:8064148220" class="mobile-call">📞 Call Now — Free Estimate</a>
+    <a href="sms:8064148220" class="mobile-text">Text Us</a>
   </div>
 
 </body>
