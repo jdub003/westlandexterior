@@ -134,13 +134,12 @@
       animation: fadeIn 0.6s 0.1s ease both;
     }
     .hero h1 em { font-style: italic; color: var(--gold); }
-    .hero-services-list {
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      color: var(--ink-muted);
-      margin-bottom: 36px;
-      text-transform: uppercase;
+    .hero-value-prop {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+      line-height: 1.7;
     }
     .btn-call-hero {
       display: block;
@@ -183,50 +182,17 @@
       flex-shrink: 0;
     }
 
-    /* PRIMARY CTA BLOCK */
-    .cta-block {
-      animation: fadeIn 0.6s 0.2s ease both;
-    }
-    .cta-block-label {
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-    .btn-call-primary {
-      display: block;
-      padding: 22px 40px;
-      background: var(--gold);
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-align: center;
-      transition: all 0.2s;
-      max-width: 360px;
-      margin-bottom: 12px;
-    }
-    .btn-call-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(184,130,42,0.3);
-    }
     .btn-text-secondary {
       display: block;
       padding: 18px 40px;
       background: transparent;
       color: var(--ink);
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
       text-align: center;
       border: 1px solid var(--rule);
-      max-width: 360px;
+      max-width: 100%;
       transition: all 0.2s;
     }
     .btn-text-secondary:hover { border-color: var(--ink); }
@@ -239,13 +205,13 @@
       text-align: center;
     }
 
-    /* HERO RIGHT */
+    /* HERO RIGHT — proof above fold */
     .hero-right {
       background: var(--ink);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 60px;
+      padding: 40px;
       position: relative;
       overflow: hidden;
     }
@@ -257,38 +223,35 @@
         repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.025) 39px, rgba(255,255,255,0.025) 40px);
     }
     .hero-right-content { position: relative; z-index: 2; }
-    .hero-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.6;
-      color: rgba(247,244,239,0.55);
-      margin-bottom: 48px;
-    }
-    .hero-trust {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: rgba(255,255,255,0.07);
-    }
-    .trust-item {
-      background: #1A1814;
-      padding: 28px 24px;
-    }
-    .trust-label {
+    .hero-proof-label {
       font-size: 10px;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 6px;
+      font-weight: 700;
+      margin-bottom: 16px;
     }
-    .trust-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
+    .hero-proof-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-proof-item { overflow: hidden; border-radius: 2px; }
+    .hero-proof-item img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 220px;
+      transition: transform 0.4s;
+    }
+    .hero-proof-item:hover img { transform: scale(1.03); }
+    .hero-proof-caption {
+      background: rgba(0,0,0,0.6);
       color: rgba(247,244,239,0.85);
-      font-weight: 400;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 14px;
+      letter-spacing: 0.3px;
     }
 
     /* ── WHY BAR ── */
@@ -651,9 +614,9 @@
       .nav-phone-num { font-size: 16px; }
       .hero { grid-template-columns: 1fr; }
       .hero-left { padding: 52px 24px 48px; }
-      .hero-right { min-height: 340px; padding: 40px 24px; }
-      .btn-call-primary, .btn-text-secondary { max-width: 100%; }
-      .cta-reassurance { max-width: 100%; }
+      .hero-right { min-height: auto; padding: 36px 24px; }
+      .hero-proof-item img { max-height: 180px; }
+      .btn-call-hero, .btn-text-secondary { max-width: 100%; }
       .why-bar { padding: 32px 24px; }
       .why-bar-items { gap: 10px 24px; }
       .why-bar-item { white-space: normal; font-size: 13px; }
@@ -696,38 +659,30 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <div class="offer-badge">Free Same-Day Estimates — Amarillo, TX</div>
-      <h1>Pressure Washing<br><em>Amarillo, TX</em></h1>
-      <p class="hero-services-list">Driveway &nbsp;·&nbsp; House Wash &nbsp;·&nbsp; Concrete &nbsp;·&nbsp; Soft Wash</p>
-      <a href="tel:8064148220" class="btn-call-hero">📞 CALL NOW &nbsp;(806) 414-8220</a>
-      <a href="sms:8064148220" class="btn-text-secondary">Text for Fast Response</a>
+      <div class="offer-badge">Amarillo, TX — Same-Day Service Available</div>
+      <h1>Fast Pressure Washing<br><em>& Driveway Cleaning</em></h1>
+      <p class="hero-value-prop">Free Same-Day Estimates &nbsp;·&nbsp; Safe Soft Wash &nbsp;·&nbsp; Same-Week Scheduling</p>
+      <a href="tel:8064148220" class="btn-call-hero">📞 CALL NOW – (806) 414-8220</a>
+      <a href="sms:8064148220" class="btn-text-secondary">💬 Text for Same-Day Free Quote — No Waiting, No Forms</a>
       <ul class="trust-bullets">
-        <li><span class="tb-check">✔</span> Locally Owned in Amarillo</li>
+        <li><span class="tb-check">✔</span> Trusted by Amarillo Homeowners — Satisfaction Guaranteed</li>
         <li><span class="tb-check">✔</span> Safe Soft Wash — No Damage to Your Home</li>
         <li><span class="tb-check">✔</span> Same-Week Scheduling Available</li>
-        <li><span class="tb-check">✔</span> Satisfaction Guaranteed</li>
+        <li><span class="tb-check">✔</span> Owner Operated — Local, Not a Franchise</li>
       </ul>
     </div>
     <div class="hero-right">
       <div class="hero-right-texture"></div>
       <div class="hero-right-content">
-        <p class="hero-quote">"First impressions start at the curb."</p>
-        <div class="hero-trust">
-          <div class="trust-item">
-            <div class="trust-label">Estimates</div>
-            <div class="trust-value">Always Free</div>
+        <div class="hero-proof-label">Real Amarillo Results</div>
+        <div class="hero-proof-grid">
+          <div class="hero-proof-item">
+            <img src="before-after-1.png" alt="Before and after concrete pathway cleaning in Amarillo TX">
+            <div class="hero-proof-caption">✔ Pathway & Concrete — Dust & Stain Removal</div>
           </div>
-          <div class="trust-item">
-            <div class="trust-label">Scheduling</div>
-            <div class="trust-value">Fast & Flexible</div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-label">Based In</div>
-            <div class="trust-value">Amarillo, TX</div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-label">Service Area</div>
-            <div class="trust-value">& Surrounding</div>
+          <div class="hero-proof-item">
+            <img src="before-after-2.png" alt="Before and after driveway cleaning in Amarillo TX">
+            <div class="hero-proof-caption">✔ Driveway Cleaning — Amarillo, TX</div>
           </div>
         </div>
       </div>
@@ -744,27 +699,27 @@
     </div>
   </section>
 
-  <!-- WHAT HAPPENS NEXT — reduces friction, tells people exactly what to expect -->
+  <!-- PROCESS -->
   <section class="process">
     <div class="process-header">
-      <div class="section-eyebrow">Simple Process</div>
-      <div class="section-title">What happens when<br>you <em>reach out</em></div>
+      <div class="section-eyebrow">How It Works</div>
+      <div class="section-title">Fast pricing. No surprises.<br><em>Professional results.</em></div>
     </div>
     <div class="process-steps">
       <div class="process-step">
         <div class="step-num">1</div>
-        <div class="step-title">You Call or Text</div>
-        <div class="step-body">Reach out at (806) 414-8220. Takes less than 2 minutes. No forms, no waiting rooms.</div>
+        <div class="step-title">Call or Text — Takes 2 Minutes</div>
+        <div class="step-body">Reach out at (806) 414-8220. No forms, no waiting rooms. Just a real person ready to help.</div>
       </div>
       <div class="process-step">
         <div class="step-num">2</div>
-        <div class="step-title">We Give You a Free Estimate</div>
-        <div class="step-body">We'll assess your property and give you a clear, upfront price. No surprises, no pressure.</div>
+        <div class="step-title">Get a Free Upfront Quote</div>
+        <div class="step-body">We give you a clear price before anything starts. No hidden fees, no pressure, no surprises.</div>
       </div>
       <div class="process-step">
         <div class="step-num">3</div>
-        <div class="step-title">We Get to Work</div>
-        <div class="step-body">Fast scheduling, professional results. Your home looks like new — and you didn't have to lift a finger.</div>
+        <div class="step-title">We Show Up & Get It Done</div>
+        <div class="step-body">Same-week scheduling. Professional equipment. Your home looks like new — guaranteed.</div>
       </div>
     </div>
   </section>
