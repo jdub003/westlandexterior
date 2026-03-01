@@ -314,6 +314,37 @@
       color: var(--ink-muted);
     }
 
+    /* ── GALLERY ── */
+    .gallery {
+      padding: 80px 60px;
+      background: var(--warm-white);
+      border-top: 1px solid var(--rule);
+    }
+    .gallery-header {
+      margin-bottom: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      background: var(--rule);
+    }
+    .gallery-item {
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      background: var(--cream);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.03); }
+
     /* ── SERVICES ── */
     .services {
       padding: 80px 60px;
@@ -514,6 +545,8 @@
       .cta-reassurance { max-width: 100%; }
       .process { padding: 64px 24px; }
       .process-steps { grid-template-columns: 1fr; }
+      .gallery { padding: 64px 24px; }
+      .gallery-grid { grid-template-columns: 1fr; }
       .services { padding: 64px 24px; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .bottom-cta { padding: 80px 24px; }
@@ -608,6 +641,22 @@
         <div class="step-num">3</div>
         <div class="step-title">We Get to Work</div>
         <div class="step-body">Fast scheduling, professional results. Your home looks like new — and you didn't have to lift a finger.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="gallery-header">
+      <div class="section-eyebrow">Our Work</div>
+      <div class="section-title">Real Amarillo <em>Results</em></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="before-after-1.png" alt="Before and after concrete pathway cleaning">
+      </div>
+      <div class="gallery-item">
+        <img src="before-after-2.png" alt="Before and after driveway cleaning">
       </div>
     </div>
   </section>
