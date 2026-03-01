@@ -153,7 +153,7 @@
       letter-spacing: 0.5px;
       text-align: center;
       transition: all 0.2s;
-      margin-bottom: 12px;
+      margin: 32px 0 12px;
       box-shadow: 0 4px 24px rgba(184,130,42,0.35);
     }
     .btn-call-hero:hover {
@@ -417,6 +417,44 @@
       transition: transform 0.5s ease;
     }
     .gallery-item:hover img { transform: scale(1.03); }
+    .gallery-cta {
+      margin-top: 48px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .gallery-cta-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+    .gallery-cta-btn {
+      display: inline-block;
+      padding: 20px 52px;
+      background: var(--gold);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 24px rgba(184,130,42,0.3);
+      transition: all 0.2s;
+    }
+    .gallery-cta-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(184,130,42,0.4);
+    }
+    .gallery-cta-text-link {
+      font-size: 13px;
+      color: var(--ink-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .gallery-cta-text-link:hover { color: var(--gold); }
 
     /* ── SERVICES ── */
     .services {
@@ -700,8 +738,6 @@
   <section class="why-bar">
     <div class="why-bar-title">Why Amarillo Homeowners Choose Us</div>
     <div class="why-bar-items">
-      <div class="why-bar-item"><span class="why-bar-check">✔</span> 100+ Homes Cleaned</div>
-      <div class="why-bar-item"><span class="why-bar-check">✔</span> Fully Insured</div>
       <div class="why-bar-item"><span class="why-bar-check">✔</span> No Damage Soft Wash Method</div>
       <div class="why-bar-item"><span class="why-bar-check">✔</span> Transparent Upfront Pricing</div>
       <div class="why-bar-item"><span class="why-bar-check">✔</span> Owner Operated</div>
@@ -746,6 +782,11 @@
       <div class="gallery-item">
         <img src="before-after-2.png" alt="Before and after driveway cleaning">
       </div>
+    </div>
+    <div class="gallery-cta">
+      <p class="gallery-cta-text">Like what you see? Get your free estimate today.</p>
+      <a href="tel:8064148220" class="gallery-cta-btn">📞 Call (806) 414-8220</a>
+      <a href="sms:8064148220" class="gallery-cta-text-link">or text us for a fast response →</a>
     </div>
   </section>
 
