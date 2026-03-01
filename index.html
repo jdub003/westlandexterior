@@ -612,6 +612,110 @@
     }
     .service-item:hover .service-line { width: 56px; }
 
+    /* ── FAQ ── */
+    .faq {
+      padding: 80px 60px;
+      background: var(--warm-white);
+      border-top: 1px solid var(--rule);
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--rule);
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--gold); }
+    .faq-q.open { color: var(--gold); }
+    .faq-icon {
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+      line-height: 1;
+    }
+    .faq-q.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink-soft);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0;
+    }
+    .faq-a.open {
+      max-height: 300px;
+      padding-bottom: 22px;
+    }
+    .faq-cta {
+      max-width: 760px;
+      margin: 52px auto 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-cta p {
+      font-size: 15px;
+      color: var(--ink-muted);
+      font-weight: 400;
+    }
+
+    /* ── FLOATING DESKTOP CALL BUTTON ── */
+    .float-call {
+      position: fixed;
+      bottom: 36px;
+      right: 36px;
+      background: var(--gold);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 16px 24px;
+      box-shadow: 0 4px 24px rgba(184,130,42,0.45);
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .float-call:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(184,130,42,0.55);
+    }
+    @media (max-width: 900px) {
+      .float-call { display: none; }
+    }
+
     /* ── BOTTOM CTA ── */
     .bottom-cta {
       background: var(--ink);
@@ -999,6 +1103,7 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .services { padding: 64px 24px; }
       .services-grid { grid-template-columns: 1fr 1fr; }
+      .faq { padding: 64px 24px; }
       .bottom-cta { padding: 80px 24px; }
       footer { padding: 32px 20px; flex-direction: column; text-align: center; }
       .mobile-sticky { display: flex; }
@@ -1248,6 +1353,76 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="faq-header">
+      <div class="section-eyebrow">Common Questions</div>
+      <div class="section-title">Everything you want to<br><em>know before you call</em></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          How long does a job take?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">It depends on the size of the area. A standard driveway can take anywhere from 45 minutes to a couple of hours. Larger jobs like a full house wash or multiple surfaces will take longer. When Joe gives your estimate he'll give you a clear time expectation so you can plan your day.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          Do I need to be home?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We prefer you're home so we can walk you through the results before we leave — but it's not required. As long as we have access to the area and a water source, Joe can get the job done. We'll send you photos when it's finished.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          How soon can you come out?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">It depends on our current schedule — but we always do our best to get to you as fast as possible. Call or text (806) 414-8220 and Joe will give you an honest answer on availability. Same-day estimates are often possible.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          Is pressure washing safe for my plants and landscaping?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes, completely. We use professional-grade soft wash methods and biodegradable solutions that are safe for your plants, grass, and landscaping. Your yard will look just as good as your driveway when we're done.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          Will it damage my siding or paint?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">No. For siding and painted surfaces we use a low-pressure soft wash technique specifically designed to clean without causing damage. Joe assesses every surface before starting to make sure the right method is used for your home.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          How much does it cost?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Every job is different — size, surface type, and how long it's been since the last clean all factor in. Many exterior cleaning companies charge $400–600 for a full service. We give you a free, no-obligation estimate upfront so you know the exact price before anything starts. No surprises.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          What if I'm not happy with the results?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We stand behind every job 100%. If you're not satisfied, Joe will come back and make it right — no arguments, no hassle. Your satisfaction is the only thing that matters to us.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          How do I pay?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We accept cash, card, Venmo, Cash App, and Chime. Pay when the job is done and you're happy with the results.</div>
+      </div>
+    </div>
+    <div class="faq-cta">
+      <p>Still have a question? Just ask Joe directly.</p>
+      <a href="tel:8064148220" class="gallery-cta-btn">📞 Call (806) 414-8220</a>
+    </div>
+  </section>
+
   <!-- BOTTOM CTA -->
   <section class="bottom-cta">
     <div class="bottom-cta-eyebrow">Ready to Get Started?</div>
@@ -1270,6 +1445,9 @@
     </div>
     <div class="footer-copy">© 2026 All Rights Reserved</div>
   </footer>
+
+  <!-- FLOATING DESKTOP CALL BUTTON -->
+  <a href="tel:8064148220" class="float-call">📞 Call Joe — Free Estimate</a>
 
   <!-- MOBILE STICKY CALL BAR — most ad clicks are on phones -->
   <div class="mobile-sticky">
