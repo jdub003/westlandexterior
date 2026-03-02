@@ -1032,28 +1032,27 @@
       background: rgba(184,130,42,0.06);
       border-left: 2px solid var(--gold);
     }
-    .callback-form {
+    .inline-callback {
       flex-direction: column;
-      gap: 10px;
       background: var(--warm-white);
       border: 1px solid var(--rule);
       padding: 16px;
       margin-top: 4px;
     }
-    .callback-label {
-      font-size: 13px;
-      color: var(--ink-soft);
-      font-weight: 500;
+    .callback-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
     }
-    .callback-inputs { display: flex; gap: 8px; }
     .callback-input {
       flex: 1;
+      min-width: 140px;
       padding: 12px 16px;
       border: 1px solid var(--rule);
       font-family: 'Outfit', sans-serif;
       font-size: 14px;
       color: var(--ink);
-      background: var(--warm-white);
+      background: white;
       outline: none;
     }
     .callback-input:focus { border-color: var(--gold); }
@@ -1067,6 +1066,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: background 0.2s;
+      white-space: nowrap;
     }
     .callback-submit:hover { background: var(--gold); color: var(--ink); }
     .callback-thanks {
@@ -1287,7 +1287,19 @@
       <div class="cta-options">
         <a href="sms:8064148220" class="cta-opt cta-opt-ghost">💬 Text Us</a>
         <a href="tel:8064148220" class="cta-opt cta-opt-primary">📞 CALL NOW – (806) 414-8220</a>
-        <a href="sms:8064148220?body=Hi%20Joe%2C%20I%27d%20like%20a%20callback%20for%20a%20free%20estimate." class="cta-opt cta-opt-ghost">Request Callback</a>
+        <a href="#" class="cta-opt cta-opt-ghost" onclick="var f=document.getElementById('inline-callback');f.style.display=f.style.display==='none'?'flex':'none';return false;">Request Callback</a>
+      </div>
+      <div id="inline-callback" class="inline-callback" style="display:none;">
+        <form action="https://formspree.io/f/xqedoozy" method="POST" onsubmit="handleCallbackSubmit(event)">
+          <input type="hidden" name="type" value="Callback Request">
+          <div class="callback-row">
+            <input type="text" name="name" placeholder="Your name" class="callback-input" required>
+            <input type="tel" name="phone" placeholder="Your phone number" class="callback-input" required>
+            <button type="submit" class="callback-submit">Call Me Back</button>
+          </div>
+          <p class="form-disclaimer" style="margin-top:8px;">Joe will call you back same day. No spam.</p>
+        </form>
+        <div id="callback-success" style="display:none;" class="callback-thanks">✔ Got it — Joe will call you shortly!</div>
       </div>
       <p class="anchoring-line">Most Amarillo homeowners are surprised by how affordable we are — especially compared to larger companies. Get your free estimate and see for yourself.</p>
       <ul class="trust-bullets">
@@ -1654,6 +1666,25 @@
     <a href="sms:8064148220" class="mobile-text">Text Us</a>
   </div>
   <script>
+    async function handleCallbackSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('callback-success').style.display = 'block';
+        }
+      } catch(err) {
+        alert('Something went wrong. Please call us at (806) 414-8220.');
+      }
+    }
+
     async function handleFormSubmit(e) {
       e.preventDefault();
       const form = e.target;
