@@ -1346,7 +1346,7 @@
     </div>
     <div class="nav-call">
       <div class="nav-phone-label">Free Estimate</div>
-      <a href="tel:8064148220" class="nav-phone-num">(806) 414-8220</a>
+      <a href="tel:8064148220" onclick="trackCall()" class="nav-phone-num">(806) 414-8220</a>
     </div>
   </nav>
 
@@ -1358,7 +1358,7 @@
       <p class="hero-value-prop">Free Same-Day Estimates &nbsp;·&nbsp; Safe Soft Wash &nbsp;·&nbsp; Same-Week Scheduling</p>
       <div class="cta-options">
         <a href="sms:8064148220" class="cta-opt cta-opt-ghost">💬 Text Us</a>
-        <a href="tel:8064148220" class="cta-opt cta-opt-primary">📞 CALL NOW – (806) 414-8220</a>
+        <a href="tel:8064148220" onclick="trackCall()" class="cta-opt cta-opt-primary">📞 CALL NOW – (806) 414-8220</a>
         <a href="#" class="cta-opt cta-opt-ghost" onclick="var f=document.getElementById('inline-callback');f.style.display=f.style.display==='none'?'flex':'none';return false;">Request Callback</a>
       </div>
       <div id="inline-callback" class="inline-callback" style="display:none;">
@@ -1432,7 +1432,7 @@
           <div class="joe-stat-label">Guaranteed or we fix it</div>
         </div>
       </div>
-      <a href="tel:8064148220" class="btn-call-hero" style="margin-top: 32px;">📞 Call Joe — (806) 414-8220</a>
+      <a href="tel:8064148220" onclick="trackCall()" class="btn-call-hero" style="margin-top: 32px;">📞 Call Joe — (806) 414-8220</a>
     </div>
   </section>
 
@@ -1480,7 +1480,7 @@
     </div>
     <div class="gallery-cta">
       <p class="gallery-cta-text">Your driveway could look like this. <strong>We're currently scheduling this week in Amarillo.</strong></p>
-      <a href="tel:8064148220" class="gallery-cta-btn">📞 Call (806) 414-8220</a>
+      <a href="tel:8064148220" onclick="trackCall()" class="gallery-cta-btn">📞 Call (806) 414-8220</a>
       <a href="sms:8064148220" class="gallery-cta-text-link">or text us — most estimates are same-day →</a>
     </div>
   </section>
@@ -1647,7 +1647,7 @@
     </div>
     <div class="faq-cta">
       <p>Still have a question? Just ask Joe directly.</p>
-      <a href="tel:8064148220" class="gallery-cta-btn">📞 Call (806) 414-8220</a>
+      <a href="tel:8064148220" onclick="trackCall()" class="gallery-cta-btn">📞 Call (806) 414-8220</a>
     </div>
   </section>
 
@@ -1701,7 +1701,7 @@
         <div class="form-success-icon">✔</div>
         <h3>Got it — Joe will call you shortly.</h3>
         <p>Most callbacks happen within a few hours. If it's urgent, call directly at (806) 414-8220.</p>
-        <a href="tel:8064148220" class="gallery-cta-btn" style="margin-top:20px;">📞 Call Now Instead</a>
+        <a href="tel:8064148220" onclick="trackCall()" class="gallery-cta-btn" style="margin-top:20px;">📞 Call Now Instead</a>
       </div>
     </div>
   </section>
@@ -1712,7 +1712,7 @@
     <h2>Get your <em>free estimate</em><br>today.</h2>
     <p class="bottom-cta-sub">Amarillo & surrounding areas · Fast scheduling · No obligation</p>
     <div class="bottom-cta-btns">
-      <a href="tel:8064148220" class="cta-btn-gold">Call (806) 414-8220</a>
+      <a href="tel:8064148220" onclick="trackCall()" class="cta-btn-gold">Call (806) 414-8220</a>
       <a href="sms:8064148220" class="cta-btn-outline">Text for Fast Response</a>
     </div>
     <p class="cta-note">We respond same day.</p>
@@ -1724,20 +1724,36 @@
       <img src="logo_.png" alt="Westland Exterior Cleaning" class="footer-logo">
     </div>
     <div class="footer-mid">
-      <a href="tel:8064148220">(806) 414-8220</a> &nbsp;·&nbsp; Amarillo, Texas
+      <a href="tel:8064148220" onclick="trackCall()">(806) 414-8220</a> &nbsp;·&nbsp; Amarillo, Texas
     </div>
     <div class="footer-copy">© 2026 All Rights Reserved</div>
   </footer>
 
   <!-- FLOATING DESKTOP CALL BUTTON -->
-  <a href="tel:8064148220" class="float-call">📞 Call Joe — Free Estimate</a>
+  <a href="tel:8064148220" onclick="trackCall()" class="float-call">📞 Call Joe — Free Estimate</a>
 
   <!-- MOBILE STICKY CALL BAR — most ad clicks are on phones -->
   <div class="mobile-sticky">
-    <a href="tel:8064148220" class="mobile-call">📞 Call Now — Free Estimate</a>
+    <a href="tel:8064148220" onclick="trackCall()" class="mobile-call">📞 Call Now — Free Estimate</a>
     <a href="sms:8064148220" class="mobile-text">Text Us</a>
   </div>
   <script>
+    // Conversion tracking
+    function trackCall() {
+      gtag('event', 'conversion', {
+        'send_to': 'G-MZ32Y4ZK95',
+        'event_category': 'Contact',
+        'event_label': 'Phone Call Click'
+      });
+    }
+    function trackForm() {
+      gtag('event', 'conversion', {
+        'send_to': 'G-MZ32Y4ZK95',
+        'event_category': 'Contact',
+        'event_label': 'Form Submission'
+      });
+    }
+
     async function handleCallbackSubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -1749,6 +1765,7 @@
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
+          trackForm();
           form.style.display = 'none';
           document.getElementById('callback-success').style.display = 'block';
         }
@@ -1768,6 +1785,7 @@
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
+          trackForm();
           form.style.display = 'none';
           document.getElementById('form-success').style.display = 'flex';
         }
