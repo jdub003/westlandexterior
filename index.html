@@ -127,6 +127,21 @@
     }
     .nav-left { display: flex; align-items: center; }
     .nav-logo { height: 52px; width: auto; display: block; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-muted);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--gold); }
     .nav-call {
       display: flex;
       align-items: center;
@@ -1286,6 +1301,7 @@
       .urgency-bar { font-size: 12px; padding: 9px 16px; }
       nav { padding: 0 20px; top: 38px; }
       .nav-phone-label { display: none; }
+      .nav-links { display: none; }
       .nav-phone-num { font-size: 16px; }
       .hero { grid-template-columns: 1fr; }
       .hero-left { padding: 52px 24px 48px; }
@@ -1343,6 +1359,12 @@
   <nav>
     <div class="nav-left">
       <img src="logo_.png" alt="Westland Exterior Cleaning" class="nav-logo">
+    </div>
+    <div class="nav-links">
+      <a href="driveway-cleaning-amarillo-tx.html" class="nav-link">Driveway Cleaning</a>
+      <a href="house-washing-amarillo-tx.html" class="nav-link">House Washing</a>
+      <a href="concrete-cleaning-amarillo-tx.html" class="nav-link">Concrete Cleaning</a>
+      <a href="commercial-pressure-washing-amarillo-tx.html" class="nav-link">Commercial</a>
     </div>
     <div class="nav-call">
       <div class="nav-phone-label">Free Estimate</div>
