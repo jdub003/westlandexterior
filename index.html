@@ -936,6 +936,105 @@
       line-height: 1.7;
     }
 
+    /* ── BLOG ── */
+    .blog {
+      padding: 80px 60px;
+      background: var(--warm-white);
+      border-top: 1px solid var(--rule);
+    }
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+    }
+    .blog-card {
+      background: var(--warm-white);
+      padding: 44px 40px;
+      transition: background 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    .blog-card:hover { background: var(--cream); }
+    .blog-card-eyebrow {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .blog-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+    .blog-card-excerpt {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+    }
+    .blog-card-read {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .blog-card-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .blog-featured-content {
+      padding: 56px 48px;
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .blog-featured-content .blog-card-eyebrow { color: var(--gold); }
+    .blog-featured-content .blog-card-title {
+      font-size: 34px;
+      color: var(--cream);
+    }
+    .blog-featured-content .blog-card-excerpt { color: rgba(247,244,239,0.6); }
+    .blog-featured-content .blog-card-read { color: var(--gold-light); }
+    .blog-featured-img {
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      overflow: hidden;
+    }
+    .blog-featured-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .blog-featured-placeholder {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px;
+      color: rgba(184,130,42,0.15);
+      font-weight: 300;
+    }
+
     /* ── BOTTOM CTA ── */
     .bottom-cta {
       background: var(--ink);
@@ -1328,6 +1427,11 @@
       .lead-form-left { padding: 52px 24px 40px; }
       .lead-form-right { padding: 40px 24px 52px; }
       .faq { padding: 64px 24px; }
+      .blog { padding: 64px 24px; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card-featured { grid-template-columns: 1fr; }
+      .blog-featured-img { min-height: 200px; }
+      .blog-featured-content { padding: 40px 28px; }
       .bottom-cta { padding: 80px 24px; }
       footer { padding: 32px 20px; flex-direction: column; text-align: center; }
       .mobile-sticky { display: flex; }
@@ -1738,6 +1842,29 @@
         <p>Most callbacks happen within a few hours. If it's urgent, call directly at (806) 414-8220.</p>
         <a href="tel:8064148220" onclick="trackCall()" class="gallery-cta-btn" style="margin-top:20px;">📞 Call Now Instead</a>
       </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="blog">
+    <div class="blog-header">
+      <div>
+        <div class="section-eyebrow">From the Owner</div>
+        <div class="section-title">The Westland <em>Story</em></div>
+      </div>
+    </div>
+    <div class="blog-grid">
+      <a href="why-i-started-westland-exterior-cleaning.html" class="blog-card blog-card-featured">
+        <div class="blog-featured-content">
+          <div class="blog-card-eyebrow">Our Story · March 2026</div>
+          <div class="blog-card-title">Why I Started Westland Exterior Cleaning</div>
+          <div class="blog-card-excerpt">I'm not going to pretend this started with some grand business plan. It started with necessity, a pressure washer, and a belief that Amarillo homeowners deserve someone who actually shows up and does the job right. Here's the real story.</div>
+          <div class="blog-card-read">Read the story →</div>
+        </div>
+        <div class="blog-featured-img">
+          <div class="blog-featured-placeholder">W</div>
+        </div>
+      </a>
     </div>
   </section>
 
